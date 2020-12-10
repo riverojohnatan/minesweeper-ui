@@ -9,7 +9,7 @@ import {CellRequest} from '../models/out/CellRequest';
 @Component({
   selector: 'app-minesweeper',
   templateUrl: './mine-sweeper.component.html',
-  styleUrls: ['./mine-sweeper.component.css']
+  styleUrls: ['./mine-sweeper.component.scss']
 })
 export class MineSweeperComponent implements OnInit, OnDestroy {
 

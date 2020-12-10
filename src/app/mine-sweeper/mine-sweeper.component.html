@@ -1,5 +1,7 @@
 <mat-card class="w-90" *ngIf="mineSweeper">
-  <mat-card-header class="w-100">Game {{mineSweeper.id}}</mat-card-header>
+  <mat-card-header class="w-100">
+    <mat-card-title>Game {{mineSweeper.id}}</mat-card-title>
+  </mat-card-header>
   <mat-card-content>
     <mat-grid-list cols="{{mineSweeper.columns}}" rowHeight="100px">
       <mat-grid-tile

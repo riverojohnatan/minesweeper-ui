@@ -10,8 +10,10 @@ import {Router} from '@angular/router';
 })
 export class MineSweeperHomeComponent implements OnInit {
 
-  username: string;
+  userId: string;
   mineSweepers: MineSweeper[] = [];
+
+  renderList = false;
 
   constructor(private service: MineSweeperService,
               private router: Router) { }
@@ -21,12 +23,10 @@ export class MineSweeperHomeComponent implements OnInit {
 
   login(): void {
     this.mineSweepers = [];
-    this.service.getMineSweeperListsByUsername(this.username).subscribe(data => {
+    this.service.getMineSweeperListsByUsername(this.userId).subscribe(data => {
       console.log(data);
-      if (data.length === 0) {
-
-      }
       this.mineSweepers = data;
+      this.renderList = true;
     });
 
   }
@@ -39,7 +39,7 @@ export class MineSweeperHomeComponent implements OnInit {
   }
 
   clean(): void {
-    this.username = null;
+    this.userId = null;
   }
 
 }

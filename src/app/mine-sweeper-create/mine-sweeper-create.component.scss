@@ -1,0 +1,11 @@
+.mat-card {
+  margin: 1rem auto 0;
+
+  .mat-card-header .mat-card-title {
+    margin-left: -16px;
+  }
+  .mat-card-actions.w-100.ml3 {
+    overflow: auto;
+    margin-left: 0;
+  }
+}

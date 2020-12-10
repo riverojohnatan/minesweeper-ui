@@ -1,0 +1,22 @@
+<mat-card class="w-90 ma0" *ngIf="request">
+  <mat-card-header>
+    <mat-card-title>Create new minesweeper for {{request.userId}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="w-100">
+    <div class="fl w-30 mr2">
+      <label class="w-100">Columns</label>
+      <input class="w-100" type="text" [(ngModel)]="request.columns"/>
+    </div>
+    <div class="fl w-30 mr2">
+      <label class="w-100">Rows</label>
+      <input class="w-100" type="text" [(ngModel)]="request.rows"/>
+    </div>
+    <div class="fl w-30 mr2">
+      <label class="w-100">Bombs</label>
+      <input class="w-100" type="text" [(ngModel)]="request.bombs"/>
+    </div>
+  </mat-card-content>
+  <mat-card-actions class="w-100 ml3">
+    <button mat-raised-button color="primary" (click)="createMineSweeper()">Save</button>
+  </mat-card-actions>
+</mat-card>

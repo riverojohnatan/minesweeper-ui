@@ -8,7 +8,7 @@
     <div class="form-group">
       <label for="username">Username</label>
       <input type="text" class="form-control"
-        id="username" required [(ngModel)]="username" name="username"/>
+             id="username" required [(ngModel)]="userId" name="username"/>
     </div>
   </mat-card-content>
   <mat-card-actions class="w-100 tr">
@@ -16,9 +16,12 @@
   </mat-card-actions>
 </mat-card>
 
-<mat-card *ngIf="mineSweepers.length > 0" class="w-90">
+<mat-card class="w-90" *ngIf="renderList">
   <mat-card-header>
-    <mat-card-title>MineSweeper List for {{username}}</mat-card-title>
+    <mat-card-title>MineSweeper List for {{userId}}</mat-card-title>
   </mat-card-header>
   <app-minesweeper-list [data]="mineSweepers" (resumeGameEvent)="resumeGame($event)"></app-minesweeper-list>
+  <mat-card-actions>
+    <a mat-raised-button [routerLink]="['minesweeper/new']" [queryParams]="{'userId': userId}">Create a new game</a>
+  </mat-card-actions>
 </mat-card>

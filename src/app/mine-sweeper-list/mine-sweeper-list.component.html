@@ -1,4 +1,4 @@
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8 w-100">
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8 w-100" *ngIf="data.length > 0">
 
   <!-- MineSweeper Id Column -->
   <ng-container matColumnDef="id">
@@ -53,3 +53,5 @@
     <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
   </tr>
 </table>
+
+<div *ngIf="data.length === 0">No minesweeper registered for this username</div>
