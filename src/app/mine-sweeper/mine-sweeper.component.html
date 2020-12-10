@@ -1,0 +1,18 @@
+<mat-card class="w-90" *ngIf="mineSweeper">
+  <mat-card-header class="w-100">Game {{mineSweeper.id}}</mat-card-header>
+  <mat-card-content>
+    <mat-grid-list cols="{{mineSweeper.columns}}" rowHeight="100px">
+      <mat-grid-tile
+        *ngFor="let cell of mineSweeper.cells">
+        <button mat-stroked-button class="h-100 w-100"
+                (click)="clickCell(cell.x, cell.y)"
+                (dblclick)="flagCell(cell.x, cell.y)"
+                *ngIf="!cell.recognized"
+        >{{cell.value}} - {{cell.bomb}}</button>
+        <button mat-flat-button disabled *ngIf="cell.recognized"
+                class="h-100 w-100"
+        >{{cell.value}} - {{cell.bomb}}</button>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-card-content>
+</mat-card>

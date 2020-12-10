@@ -24,7 +24,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "src/styles.css",
+              "node_modules/tachyons/css/tachyons.min.css"
             ],
             "scripts": []
           },
@@ -87,6 +89,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -120,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "minesweeper-UI"
+  "defaultProject": "minesweeper-UI",
+  "cli": {
+    "analytics": "1303fb20-f014-43aa-a0a7-47f76a0c749c"
+  }
 }

@@ -1,0 +1,24 @@
+<mat-card class="w-90 br2 mt1">
+  <mat-card-header class="tc">
+    <mat-card-title>Welcome to MineSweeper Game</mat-card-title>
+    <mat-card-subtitle>Please enter your user name</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content class="w-80">
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" class="form-control"
+        id="username" required [(ngModel)]="username" name="username"/>
+    </div>
+  </mat-card-content>
+  <mat-card-actions class="w-100 tr">
+    <button mat-raised-button color="primary" (click)="login()">Log in</button>
+  </mat-card-actions>
+</mat-card>
+
+<mat-card *ngIf="mineSweepers.length > 0" class="w-90">
+  <mat-card-header>
+    <mat-card-title>MineSweeper List for {{username}}</mat-card-title>
+  </mat-card-header>
+  <app-minesweeper-list [data]="mineSweepers" (resumeGameEvent)="resumeGame($event)"></app-minesweeper-list>
+</mat-card>
