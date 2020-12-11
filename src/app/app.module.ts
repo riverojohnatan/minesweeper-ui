@@ -19,6 +19,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import { MineSweeperComponent } from './mine-sweeper/mine-sweeper.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { MineSweeperCreateComponent } from './mine-sweeper-create/mine-sweeper-create.component';
+import {DialogContentEndGameComponent} from './mine-sweeper/dialog/dialog-content-end-game.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { MineSweeperCreateComponent } from './mine-sweeper-create/mine-sweeper-c
     MineSweeperHomeComponent,
     MineSweeperListComponent,
     MineSweeperComponent,
-    MineSweeperCreateComponent
+    MineSweeperCreateComponent,
+    DialogContentEndGameComponent
   ],
   imports: [
     BrowserModule,

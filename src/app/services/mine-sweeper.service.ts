@@ -14,7 +14,7 @@ export class MineSweeperService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public getMineSweeperListsByUsername(username: string): Observable<MineSweeper[]> {
+  public getMineSweeperListsByUserId(username: string): Observable<MineSweeper[]> {
     console.log('Retrieve mineSweeper list by username: ', username);
     return this.httpClient.get<MineSweeper[]>(`${baseURL}/${username}`);
   }

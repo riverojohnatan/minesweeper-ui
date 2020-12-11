@@ -3,18 +3,37 @@
     <mat-card-title>Game {{mineSweeper.id}}</mat-card-title>
   </mat-card-header>
   <mat-card-content>
+    <div class="w-100 mb2">
+      <label for="click">
+        <input type="radio" [(ngModel)]="action" value="click" id="click" name="click">
+        Click
+      </label>
+      <label for="flag">
+        <input type="radio" [(ngModel)]="action" value="flag" id="flag" name="flag">
+        Flag
+      </label>
+    </div>
     <mat-grid-list cols="{{mineSweeper.columns}}" rowHeight="100px">
-      <mat-grid-tile
+      <mat-grid-tile class="responsive-border"
         *ngFor="let cell of mineSweeper.cells">
         <button mat-stroked-button class="h-100 w-100"
-                (click)="clickCell(cell.x, cell.y)"
-                (dblclick)="flagCell(cell.x, cell.y)"
-                *ngIf="!cell.recognized"
-        >{{cell.value}} - {{cell.bomb}}</button>
-        <button mat-flat-button disabled *ngIf="cell.recognized"
+                (click)="actionCell(cell.x, cell.y)"
+                *ngIf="!cell.recognized && !cell.flagged"
+        ></button>
+        <button mat-flat-button disabled *ngIf="cell.recognized && !cell.bomb"
                 class="h-100 w-100"
-        >{{cell.value}} - {{cell.bomb}}</button>
+        ><span class="material-icons icon-color-{{cell.value}}" *ngIf="cell.value > 0">filter_{{cell.value}}</span>
+        </button>
+        <button mat-flat-button disabled *ngIf="cell.recognized && cell.bomb"
+                class="bomb-button h-100 w-100"
+        ><span class="material-icons"></span></button>
+        <button mat-flat-button color="accent" *ngIf="cell.flagged"
+                class="h-100 w-100"
+        ><span class="material-icons">flag</span></button>
       </mat-grid-tile>
     </mat-grid-list>
   </mat-card-content>
+  <mat-card-actions class="tr mt2">
+    <button mat-raised-button color="primary" (click)="pause()">Pause</button>
+  </mat-card-actions>
 </mat-card>

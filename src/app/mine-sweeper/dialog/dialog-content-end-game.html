@@ -1,0 +1,12 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{message}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <h3>What you wanna do?</h3>
+  </mat-card-content>
+  <mat-card-actions class="tc">
+    <button mat-raised-button color="primary" (click)="goToList()" [mat-dialog-close]="true">Go to list</button>
+    <button mat-raised-button color="primary" (click)="goToNewGame()" [mat-dialog-close]="true">Create new game</button>
+  </mat-card-actions>
+</mat-card>

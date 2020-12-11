@@ -21,7 +21,7 @@
     <mat-card-title>MineSweeper List for {{userId}}</mat-card-title>
   </mat-card-header>
   <app-minesweeper-list [data]="mineSweepers" (resumeGameEvent)="resumeGame($event)"></app-minesweeper-list>
-  <mat-card-actions>
-    <a mat-raised-button [routerLink]="['minesweeper/new']" [queryParams]="{'userId': userId}">Create a new game</a>
+  <mat-card-actions class="tr mt2">
+    <a mat-raised-button color="primary" [routerLink]="['minesweeper/new']" [queryParams]="{'userId': userId}">Create a new game</a>
   </mat-card-actions>
 </mat-card>
