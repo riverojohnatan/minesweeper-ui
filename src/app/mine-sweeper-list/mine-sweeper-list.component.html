@@ -26,7 +26,7 @@
 
   <!-- Status Column -->
   <ng-container matColumnDef="status">
-    <th mat-header-cell *matHeaderCellDef> Bombs </th>
+    <th mat-header-cell *matHeaderCellDef> Status </th>
     <td mat-cell *matCellDef="let element"> {{element.status}} </td>
   </ng-container>
 
@@ -35,13 +35,16 @@
     <th mat-header-cell *matHeaderCellDef> Action </th>
     <td mat-cell *matCellDef="let element">
       <a *ngIf="element.status === 'ACTIVE'" mat-icon-button
-         matTooltip="Continue playing"
+         matTooltip="Active game" class="active-icon"
          [routerLink]="['/minesweeper', element.id]"
       ><span class="material-icons">sports_esports</span></a>
       <a *ngIf="element.status === 'PAUSED'" mat-icon-button
-         matTooltip="Continue playing"
+         matTooltip="Continue playing" class="resume-icon"
          (click)="resumeGame(element)"
       ><span class="material-icons">play_arrow</span></a>
+      <a *ngIf="element.status === 'WIN'"><span class="material-icons">
+        check_circle</span></a>
+      <a *ngIf="element.status === 'GAME_OVER'"><span class="material-icons">outlet</span></a>
     </td>
   </ng-container>
 
