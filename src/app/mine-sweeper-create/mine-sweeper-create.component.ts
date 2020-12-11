@@ -37,4 +37,13 @@ export class MineSweeperCreateComponent implements OnInit {
       .subscribe(data => this.router.navigate(['minesweeper', data.id]));
   }
 
+  validRequest(): boolean {
+    return this.request.columns !== 0 && this.request.rows !== 0
+      && this.request.bombs !== 0 && (this.request.columns * this.request.rows) > this.request.bombs;
+  }
+
+  goToList(): void {
+    this.router.navigate([''], { queryParams: {userId: this.request.userId}});
+  }
+
 }

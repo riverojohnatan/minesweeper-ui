@@ -17,6 +17,8 @@
     </div>
   </mat-card-content>
   <mat-card-actions class="w-100 ml3 tr">
-    <button mat-raised-button color="primary" (click)="createMineSweeper()">Save</button>
+    <button mat-raised-button color="primary" (click)="goToList()">Back to list</button>
+    <button mat-raised-button color="primary" (click)="createMineSweeper()"
+            [disabled]="!validRequest()">Save</button>
   </mat-card-actions>
 </mat-card>

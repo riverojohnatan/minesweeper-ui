@@ -25,8 +25,8 @@
         ><span class="material-icons icon-color-{{cell.value}}" *ngIf="cell.value > 0">filter_{{cell.value}}</span>
           <span class="material-icons bomb-icon" *ngIf="cell.bomb">outlet</span>
         </button>
-        <button mat-flat-button color="accent" *ngIf="cell.flagged"
-                class="h-100 w-100"
+        <button mat-flat-button color="accent" *ngIf="cell.flagged && !cell.recognized"
+                class="h-100 w-100" (click)="actionCell(cell.x, cell.y)"
         ><span class="material-icons">flag</span></button>
       </mat-grid-tile>
     </mat-grid-list>
